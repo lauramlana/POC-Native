@@ -63,6 +63,87 @@ const animes = [
         episodes: 100,
         type: "Shounen"
       },
+      {
+        id: 8,
+        name: 'Death Note',
+        photo: `https://cdn.culturagenial.com/imagens/death-note-cartaz.jpg`,
+        streaming: "Netflix",
+        episodes: 100,
+        type: "Shounen"
+      },
+      {
+        id: 9,
+        name: 'Shingeki no Kyojin',
+        photo: `https://static.wikia.nocookie.net/shingekinokyojin/images/d/d8/Attack_on_Titan_Season_1.jpg/revision/latest?cb=20211005182832`,
+        streaming: "Netflix",
+        episodes: 100,
+        type: "Seinen"
+      },
+      {
+        id: 10,
+        name: 'Kimini Todoke',
+        photo: `https://www.crunchyroll.com/imgsrv/display/thumbnail/1200x675/catalog/crunchyroll/760cf9b52c60392d7087949606d85836.jpe`,
+        streaming: "Netflix",
+        episodes: 10,
+        type: "Shoujo"
+      },
+      {
+        id: 11,
+        name: 'Bokura Ga Ita',
+        photo: `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP1LEEAqlFgcF6w0HHo35fYzkMe8Sx-2_hMP-Ng9bxpc8IQjtmFkVZJ9hpCTrCRqqwxtQ&usqp=CAU`,
+        streaming: "Netflix",
+        episodes: 10,
+        type: "Shoujo"
+      },
+      {
+        id: 12,
+        name: 'Blue Spring Ride',
+        photo: `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIM-DT9U6WXJRgCs56LoNDzACK9ix2TTZCKg&usqp=CAU`,
+        streaming: "Netflix",
+        episodes: 10,
+        type: "Shoujo"
+      },
+      {
+        id: 13,
+        name: 'Tokyo Ghoul',
+        photo: `https://aproveitopraler.files.wordpress.com/2015/11/capa1.jpg`,
+        streaming: "Netflix",
+        episodes: 10,
+        type: "Seinen"
+      },
+      {
+        id: 14,
+        name: 'Mirai Nikki',
+        photo: `https://upload.wikimedia.org/wikipedia/pt/1/1a/Mirainikkicover1.jpg`,
+        streaming: "Netflix",
+        episodes: 10,
+        type: "Suspense"
+      },
+      {
+        id: 15,
+        name: 'Haikyuu',
+        photo: `https://viciados.net/wp-content/uploads/2020/03/57533-haikyuu-haik222yuu.jpg`,
+        streaming: "Netflix",
+        episodes: 10,
+        type: "Sport"
+      },
+      {
+        id: 16,
+        name: 'Another',
+        photo: `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIGtcZ-7otD86vLJcrKJHyoBwPaM1OclDhL6_gLLzCfvcQNEFXUhgYKiBqgohFxfyJ-qI&usqp=CAU`,
+        streaming: "Netflix",
+        episodes: 10,
+        type: "Suspense"
+      },
+      {
+        id: 17,
+        name: 'Kakegurui',
+        photo: `https://img.ibxk.com.br/2022/03/29/29074714950030.jpg?ims=328x`,
+        streaming: "Netflix",
+        episodes: 10,
+        type: "Suspense"
+      }
+
 ]
 
 export default animes;

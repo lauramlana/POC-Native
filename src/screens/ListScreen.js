@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Text, StyleSheet, View, FlatList, Image, Button } from "react-native";
 import RNPickerSelect from "react-native-picker-select";
-import animes from "../assests/mock";
+import animes from "../assets/mock";
 
 export default function ListScreen(props) {
   const [selectedCategory, setSelectedCategory] = useState("all"); // Set the default category
@@ -38,7 +38,6 @@ export default function ListScreen(props) {
                   onPress={() =>
                     props.navigation.navigate("Detail", {
                       id: item.id,
-                      animes: item,
                     })
                   }
                 ></Button>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, StyleSheet, View, Image  } from "react-native";
-import animes from '../assests/mock';
+import animes from '../assets/mock';
 
 export default function DetailScreen(props) {
   // console.log(props.navigation.getParam('id'));
