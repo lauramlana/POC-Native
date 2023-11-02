@@ -4,8 +4,8 @@ import RNPickerSelect from "react-native-picker-select";
 import animes from "../assets/mock";
 
 export default function ListScreen(props) {
-  const [selectedCategory, setSelectedCategory] = useState("all"); // Set the default category
-
+  console.log(props);
+  const [selectedCategory, setSelectedCategory] = useState("all"); 
   return (
     <View style={{ flex: 1 }}>
       <Text style={styles.headerStyle}>ListScreen View</Text>

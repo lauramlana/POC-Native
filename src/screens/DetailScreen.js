@@ -1,20 +1,19 @@
 import React from "react";
-import { Text, StyleSheet, View, Image  } from "react-native";
-import animes from '../assets/mock';
+import { Text, StyleSheet, View, Image } from "react-native";
+import animes from "../assets/mock";
 
-export default function DetailScreen(props) {
-  // console.log(props.navigation.getParam('id'));
-   const selectedAnime = props.navigation.getParam('id')
+export default function DetailScreen({ route }) {
+  const { id } = route.params;
+  const selectedAnime = id;
 
-    const anime = animes.find((element) => element.id === selectedAnime)
-    return (
+  const anime = animes.find((element) => element.id === selectedAnime);
+  return (
     <View>
       <Image style={styles.image} source={{ uri: anime.photo }} />
       <Text style={styles.propsStyle}>{anime.name}</Text>
       <Text style={styles.propsStyle}>{anime.streaming}</Text>
       <Text style={styles.propsStyle}>{anime.episodes}</Text>
       <Text style={styles.propsStyle}>{anime.type}</Text>
-
     </View>
   );
 }
@@ -31,7 +30,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   image: {
-    width: 'auto',
+    width: "auto",
     height: 500,
     marginHorizontal: 20,
     marginTop: 10,
