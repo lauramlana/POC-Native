@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View,  StyleSheet, Button, TouchableOpacity } from 'react-native';
+import { FIREBASE_AUTH } from '../../FirebaseConfig';
 
  const HomeScreen = (props) => {
     return (
@@ -14,6 +15,10 @@ import { Text, View,  StyleSheet, Button, TouchableOpacity } from 'react-native'
             >
                 <Text style={styles.btnTouchable}>GO TO LIST VIEW</Text>
             </TouchableOpacity>
+            <Button
+            title='Logout'
+            onPress={() => FIREBASE_AUTH.signOut()}
+            />
         </View>  
     )
 }
