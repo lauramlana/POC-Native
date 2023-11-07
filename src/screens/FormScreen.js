@@ -4,16 +4,20 @@ import { Text, StyleSheet, View } from "react-native";
 export default function FormScreen() {
 
 return (
-    <View> 
-        <Text style={styles.text}>Form Screen View</Text>
+    <View style={styles.container}> 
+        <Text style={styles.headerText}>Form Screen View</Text>
     </View>
 )
 };
 
 const styles = StyleSheet.create({
-    text: {
-        fontSize: 20,
-        marginVertical: 5,
-        marginHorizontal: 40
-    },
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+      headerText: {
+        fontSize: 25,
+        marginBottom: 20,
+      },
 });

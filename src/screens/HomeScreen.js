@@ -8,6 +8,7 @@ import {
   Image,
 } from "react-native";
 import { FIREBASE_AUTH } from "../../FirebaseConfig";
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
 const HomeScreen = (props) => {
   const [user, setUser] = useState(null);
@@ -19,15 +20,24 @@ const HomeScreen = (props) => {
     }
   }, []);
 
+  const handleLogout = async () => {
+    try {
+      await FIREBASE_AUTH.signOut();
+      await GoogleSignin.revokeAccess();
+    } catch (error) {
+      console.log("Erro durante o logout:", error);
+    }
+  };
+
   return (
-    <View>
-      <Text style={styles.text}>Home View</Text>
+    <View style={styles.container}>
+      <Text style={styles.headerText}>Home View</Text>
       {user ? (
         <>
-          <Text>Usuário logado: {user.displayName}</Text>
+          <Text style={styles.userInfo}>Usuário logado: {user.displayName}</Text>
           <Image
             source={{ uri: user.photoURL }}
-            style={{ height: 200, width: 200, borderRadius: 150, marginHorizontal: 100, marginVertical:40 }}
+            style={styles.userImage}
           />
         </>
       ) : null}
@@ -36,26 +46,41 @@ const HomeScreen = (props) => {
         title="Go to Form View"
       />
       <TouchableOpacity onPress={() => props.navigation.navigate("List")}>
-        <Text style={styles.btnTouchable}>GO TO LIST VIEW</Text>
+        <Text style={styles.buttonText}>GO TO LIST VIEW</Text>
       </TouchableOpacity>
-      <Button title="Logout" onPress={() => FIREBASE_AUTH.signOut()} />
+      <Button title="Logout" onPress={handleLogout} />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  text: {
-    fontSize: 25,
-    marginVertical: 20,
-    marginHorizontal: 100,
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  btnTouchable: {
+  headerText: {
+    fontSize: 25,
+    marginBottom: 20,
+  },
+  userInfo: {
+    fontSize: 18,
+    marginBottom: 10,
+  },
+  userImage: {
+    height: 200,
+    width: 200,
+    borderRadius: 150,
+    marginVertical: 10,
+  },
+  buttonText: {
     fontSize: 15,
     marginVertical: 10,
-    marginHorizontal: 120,
     color: "white",
     fontWeight: "bold",
     backgroundColor: "gray",
+    paddingHorizontal: 20,
+    paddingVertical: 10,
   },
 });
 

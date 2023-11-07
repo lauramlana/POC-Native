@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, StyleSheet, View, Image } from "react-native";
+import { Text, StyleSheet, View, Image, ScrollView } from "react-native";
 import animes from "../assets/mock";
 
 export default function DetailScreen({ route }) {
@@ -8,31 +8,39 @@ export default function DetailScreen({ route }) {
 
   const anime = animes.find((element) => element.id === selectedAnime);
   return (
-    <View>
+    <ScrollView contentContainerStyle={styles.container}>
+      <Text style={styles.title}>{anime.name}</Text>
       <Image style={styles.image} source={{ uri: anime.photo }} />
-      <Text style={styles.propsStyle}>{anime.name}</Text>
-      <Text style={styles.propsStyle}>{anime.streaming}</Text>
-      <Text style={styles.propsStyle}>{anime.episodes}</Text>
-      <Text style={styles.propsStyle}>{anime.type}</Text>
-    </View>
+      <View style={styles.infoContainer}>
+        <Text style={styles.info}>Streaming: {anime.streaming}</Text>
+        <Text style={styles.info}>Episodes: {anime.episodes}</Text>
+        <Text style={styles.info}>Type: {anime.type}</Text>
+      </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  propsStyle: {
-    fontSize: 20,
-    marginVertical: 5,
-    marginHorizontal: 40,
-  },
-  info: {
-    fontSize: 15,
-    marginHorizontal: 20,
-    marginBottom: 10,
+  container: {
+    flexGrow: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
   image: {
-    width: "auto",
+    width: "100%",
     height: 500,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: "bold",
+    marginVertical: 10,
+  },
+  infoContainer: {
     marginHorizontal: 20,
-    marginTop: 10,
+  },
+  info: {
+    fontSize: 18,
+    marginVertical: 5,
   },
 });

@@ -33,19 +33,19 @@ const LoginScreen = () => {
       "93265877309-7l4ncb4acfmdp0qcf73vsv18uqp8te5s.apps.googleusercontent.com",
   });
 
-  // const signUp = async () => {
-  //   setLoading(true);
-  //   try {
-  //     const response = await createUserWithEmailAndPassword(auth, email, password);
-  //     console.log(response);
-  //     alert('Check your email!')
-  //   } catch (error) {
-  //     console.log(error);
-  //     alert("SignUp failed" + error.message);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
+  const signUp = async () => {
+    setLoading(true);
+    try {
+      const response = await createUserWithEmailAndPassword(auth, email, password);
+      console.log(response);
+      alert('Check your email!')
+    } catch (error) {
+      console.log(error);
+      alert("SignUp failed" + error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const signIn = async () => {
     setLoading(true);
@@ -61,25 +61,13 @@ const LoginScreen = () => {
   };
 
   const handleGoogleSignIn = async () => {
-    // const { idToken } = await GoogleSignin.signIn();
-    // const googleCredential = GoogleAuthProvider.credential(idToken);
-    // console.log(googleCredential); // undefined
-    // const user_sign_in = auth().signInWithCredential(googleCredential);
-    // user_sign_in
-    //   .then((user) => {
-    //     console.log(user.familyName);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
-
     try {
       await GoogleSignin.hasPlayServices();
       const userInfo = await GoogleSignin.signIn();
   
       const { idToken, accessToken } = userInfo;
   
-      const auth = getAuth(FIREBASE_APP); // Observe a mudança aqui
+      const auth = getAuth(FIREBASE_APP);
       const googleCredential = GoogleAuthProvider.credential(idToken, accessToken);
   
       await signInWithCredential(auth, googleCredential);
@@ -91,7 +79,7 @@ const LoginScreen = () => {
   };
 
   return (
-    <View>
+    <View style={styles.container}>
       <Text style={styles.text}>Login View</Text>
       <KeyboardAvoidingView behavior="padding">
         <Text style={styles.label}>Email:</Text>
@@ -113,11 +101,12 @@ const LoginScreen = () => {
           <ActivityIndicator size="large" color="#0000ff" />
         ) : (
           <View>
-            <Button onPress={signIn} title="Login" />
-            {/* <Button onPress={signUp} title="Register" /> */}
+            <Button onPress={signIn} title="Login" style={styles.button}/>
+            <Button onPress={signUp} title="Register" />
             <GoogleSigninButton
               title="Google Sign-In"
               onPress={handleGoogleSignIn}
+              style={{width:300, heigh:65, margin:15}}
             />
           </View>
         )}
@@ -134,10 +123,21 @@ LoginScreen.defaultProps = {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#fff",
+  },
   text: {
     fontSize: 25,
     marginVertical: 20,
-    marginHorizontal: 100,
+  },
+  label: {
+    fontSize: 20,
+    marginBottom: 5,
+    marginLeft: 5,
+    color: "#333",
   },
   input: {
     fontSize: 18,
@@ -146,11 +146,13 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     padding: 5,
     margin: 5,
+    width: 300,
   },
-  label: {
-    fontSize: 20,
-    marginBottom: 5,
-    marginLeft: 5,
+  button: {
+    backgroundColor: "#007AFF",
+    padding: 20,
+    borderRadius: 5,
+    width:300
   },
 });
 
