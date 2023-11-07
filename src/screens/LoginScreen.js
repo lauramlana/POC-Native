@@ -5,7 +5,6 @@ import {
   StyleSheet,
   Button,
   TextInput,
-  KeyboardAvoidingView,
 } from "react-native";
 import { FIREBASE_AUTH, FIREBASE_APP } from "../../FirebaseConfig";
 import {
@@ -80,8 +79,6 @@ const LoginScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Login View</Text>
-      <KeyboardAvoidingView behavior="padding">
         <Text style={styles.label}>Email:</Text>
         <TextInput
           value={email}
@@ -110,7 +107,6 @@ const LoginScreen = () => {
             />
           </View>
         )}
-      </KeyboardAvoidingView>
     </View>
   );
 };
