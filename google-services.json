@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "93265877309",
+    "project_id": "poc-react-native-802e0",
+    "storage_bucket": "poc-react-native-802e0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:93265877309:android:d4d0a0e88437b0b4eb8d54",
+        "android_client_info": {
+          "package_name": "com.lauralana.pocreactnative"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "93265877309-4rda4e4hj6bpiahgn9u5drtv337sl6nj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lauralana.pocreactnative",
+            "certificate_hash": "51c797e12b30289e253a5c9f6614f09332759e68"
+          }
+        },
+        {
+          "client_id": "93265877309-oglusiepto5h7f99m9lmimvj1q5q3nm4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lauralana.pocreactnative",
+            "certificate_hash": "f4eaac5f059eeb6cf0af811cba91858fcf67ec39"
+          }
+        },
+        {
+          "client_id": "93265877309-7l4ncb4acfmdp0qcf73vsv18uqp8te5s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUW-1z70Rhe5zwovemtO8LuUJ4llmE36A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "93265877309-7l4ncb4acfmdp0qcf73vsv18uqp8te5s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
