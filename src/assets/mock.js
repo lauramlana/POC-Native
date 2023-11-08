@@ -1,3 +1,5 @@
+export const apiKey = '14aa6b5d7412489e1d280cf6504887dc';
+
 const animes = [
     {
       id: 0,
