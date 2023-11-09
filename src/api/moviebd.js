@@ -37,11 +37,3 @@ const apiCall = async (endpoint, params) => {
 export const fetchTrending = () => {
   return apiCall(trendingMoviesEndpoint);
 };
-
-export const fetchUpcoming = () => {
-  return apiCall(upcomingMoviesEndpoint);
-};
-
-export const fetchTopRated = () => {
-  return apiCall(topRatedMoviesEndpoint);
-};

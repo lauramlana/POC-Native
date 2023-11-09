@@ -1,36 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { Text, StyleSheet, FlatList, View, Image, Button } from "react-native";
-import { fetchTopRated, fetchTrending, fetchUpcoming } from "../api/moviebd";
+import { fetchTrending } from "../api/moviebd";
 // import { FlashList } from "@shopify/flash-list";
 
-export default function ListScreen(props) {
+export default function MoviesScreen(props) {
   const [trending, setTrending] = useState([]);
-//   const [upcoming, setUpcoming] = useState([]);
-//   const [topRated, setTopRated] = useState([]);
+
 
   useEffect(() => {
     getTrendingMovies();
-    // getUpcomingMovies();
-    // getTopRatedMovies();
   }, []);
 
   const getTrendingMovies = async () => {
     const data = await fetchTrending();
-    console.log("trending", data);
     if (data && data.results) setTrending(data.results);
   };
-
-//   const getUpcomingMovies = async ()=>{
-//     const data = await fetchUpcoming();
-//     console.log('got upcoming', data.results.length)
-//     if(data && data.results) setUpcoming(data.results);
-//   }
-
-//   const getTopRatedMovies = async ()=>{
-//     const data = await fetchTopRated();
-//     console.log('got top rated', data.results.length)
-//     if(data && data.results) setTopRated(data.results);
-//   }
 
   return (
     <View style={styles.container}>

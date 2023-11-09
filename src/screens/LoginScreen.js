@@ -36,10 +36,8 @@ const LoginScreen = () => {
     setLoading(true);
     try {
       const response = await createUserWithEmailAndPassword(auth, email, password);
-      console.log(response);
       alert('Check your email!')
     } catch (error) {
-      console.log(error);
       alert("SignUp failed" + error.message);
     } finally {
       setLoading(false);
@@ -50,9 +48,7 @@ const LoginScreen = () => {
     setLoading(true);
     try {
       const response = await signInWithEmailAndPassword(auth, email, password);
-      console.log(response);
     } catch (error) {
-      console.log(error);
       alert("SignIn failed" + error.message);
     } finally {
       setLoading(false);
@@ -70,8 +66,6 @@ const LoginScreen = () => {
       const googleCredential = GoogleAuthProvider.credential(idToken, accessToken);
   
       await signInWithCredential(auth, googleCredential);
-  
-      console.log('Usuário autenticado com sucesso:', auth.currentUser.displayName);
     } catch (error) {
       console.error('Erro ao fazer login com o Google:', error);
     }

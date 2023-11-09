@@ -16,7 +16,7 @@ export default function UsersListScreen() {
         `https://api.github.com/users?since=${lastID}per_page=10`
       );
       setData([...data, ...response.data]);
-      console.log(data);
+      
     } catch (error) {
       console.error("Erro ao buscar dados do GitHub: ", error);
     }
