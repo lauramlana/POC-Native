@@ -54,6 +54,10 @@ const HomeScreen = (props) => {
       <TouchableOpacity onPress={() => props.navigation.navigate("Users")}>
         <Text style={styles.buttonText}>GO TO USERS LIST VIEW</Text>
       </TouchableOpacity>
+      <Button
+        onPress={() => props.navigation.navigate("Teste")}
+        title="TESTE"
+      />
       <Button title="Logout" onPress={handleLogout} />
     </View>
   );

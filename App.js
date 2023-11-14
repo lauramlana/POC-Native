@@ -8,6 +8,7 @@ import LoginScreen from "./src/screens/LoginScreen";
 import MoviesScreen from "./src/screens/MoviesScreen";
 import MovieDetailScreen from "./src/screens/MovieDetailScreen";
 import UsersListScreen from "./src/screens/UsersListScreen";
+import TesteScreen from "./src/screens/TesteScreen";
 
 import { onAuthStateChanged } from "firebase/auth";
 import { FIREBASE_AUTH } from "./FirebaseConfig";
@@ -26,6 +27,7 @@ function InsideLayout() {
       <InsideStack.Screen name="Movies" component={MoviesScreen} />
       <InsideStack.Screen name="MovieDetail" component={MovieDetailScreen} />
       <InsideStack.Screen name="Users" component={UsersListScreen} />
+      <InsideStack.Screen name="Teste" component={TesteScreen} />
     </InsideStack.Navigator>
   );
 }
